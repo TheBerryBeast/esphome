@@ -1,4 +1,6 @@
 #include "heatpumpir.h"
+#include "esphome/core/log.h"
+
 
 #ifdef USE_ARDUINO
 
@@ -186,7 +188,9 @@ void HeatpumpIRClimate::transmit_state() {
       operating_mode_cmd = MODE_AUTO;
       break;
   }
-    
+  
+  ESP_LOGCONFIG(TAG, "  Setting Temperature: %.1f°C", this->target_temperature);
+  
   temperature_cmd = (uint8_t) ((this->target_temperature * (9/5)) + 32);
 
   IRSenderESPHome esp_sender(this->transmitter_);
