@@ -191,7 +191,7 @@ void HeatpumpIRClimate::transmit_state() {
   
   ESP_LOGCONFIG(TAG, "  Setting Temperature: %.1f°C", this->target_temperature);
   
-  temperature_cmd = (uint8_t) ((this->target_temperature * (9.0/5)) + 32);
+  temperature_cmd = (uint8_t) std::round((this->target_temperature * (9.0/5)) + 32);
   
   ESP_LOGCONFIG(TAG, "  Setting Temperature Actual: %.1f°C", temperature_cmd);
 
