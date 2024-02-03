@@ -186,8 +186,8 @@ void HeatpumpIRClimate::transmit_state() {
       operating_mode_cmd = MODE_AUTO;
       break;
   }
-  
-  temperature_cmd = (uint8_t) clamp((this->target_temperature - 32) * 5/9, this->min_temperature_, this->max_temperature_);
+    
+  temperature_cmd = (uint8_t) ((this->target_temperature * (9/5)) + 32);
 
   IRSenderESPHome esp_sender(this->transmitter_);
   heatpump_ir_->send(esp_sender, power_mode_cmd, operating_mode_cmd, fan_speed_cmd, temperature_cmd, swing_v_cmd,
