@@ -1,4 +1,4 @@
-import esphome.codegen as cg
+import esphome.codegen as c
 import esphome.config_validation as cv
 from esphome.components import climate_ir
 from esphome.const import (
