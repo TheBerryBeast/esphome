@@ -1,4 +1,4 @@
-import esphome.codegen as c
+import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import climate_ir
 from esphome.const import (
@@ -33,6 +33,7 @@ PROTOCOLS = {
     "greeya": Protocol.PROTOCOL_GREEYAA,
     "greeyan": Protocol.PROTOCOL_GREEYAN,
     "greeyac": Protocol.PROTOCOL_GREEYAC,
+    "greeyap": Protocol.PROTOCOL_GREEYAP,
     "greeyt": Protocol.PROTOCOL_GREEYT,
     "hisense_aud": Protocol.PROTOCOL_HISENSE_AUD,
     "hitachi": Protocol.PROTOCOL_HITACHI,
