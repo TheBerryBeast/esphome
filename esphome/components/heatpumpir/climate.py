@@ -6,7 +6,7 @@ from esphome.const import (
     CONF_MAX_TEMPERATURE,
     CONF_MIN_TEMPERATURE,
     CONF_PROTOCOL,
-    CONF_VISUAL,
+    CONF_VISUAL
 )
 from esphome.core import CORE
 
