@@ -71,7 +71,8 @@ void HeatpumpIRClimate::setup() {
   if (this->sensor_) {
     this->sensor_->add_on_state_callback([this](float state) {
       this->current_temperature = state;
-
+      ESP_LOGCONFIG(TAG, "  Sensor Temperature: %.1f°C", this->current_temperature);
+      
       IRSenderESPHome esp_sender(this->transmitter_);
       this->heatpump_ir_->send(esp_sender, uint8_t(std::round(this->current_temperature)));
 
